@@ -13,7 +13,7 @@ spec:
   http:
   - match:
     - uri:
-        exact: /dev/carts
+        exact: /staging/carts
     rewrite:
       uri: /
     route:
