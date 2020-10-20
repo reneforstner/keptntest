@@ -8,10 +8,15 @@ spec:
   - public-gateway.istio-system
   - mesh
   hosts:
-  - carts.sockshop-staging.adafbdf6312c411eb8aa80249bac460d-1023403331.us-west-2.elb.amazonaws.com
+  - adafbdf6312c411eb8aa80249bac460d-1023403331.us-west-2.elb.amazonaws.com
   - carts
   http:
-  - route:
+  - match:
+    - uri:
+        exact: /dev/carts
+    rewrite:
+      uri: /
+    route:
     - destination:
         host: carts-canary.sockshop-staging.svc.cluster.local
     - destination:
