@@ -1,0 +1,16 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  creationTimestamp: null
+  name: carts
+spec:
+  gateways:
+  - public-gateway.istio-system
+  - mesh
+  hosts:
+  - carts.sockshop-dev.adafbdf6312c411eb8aa80249bac460d-1023403331.us-west-2.elb.amazonaws.com
+  - carts
+  http:
+  - route:
+    - destination:
+        host: carts.sockshop-dev.svc.cluster.local
