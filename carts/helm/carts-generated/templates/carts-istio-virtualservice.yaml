@@ -19,6 +19,6 @@ spec:
     route:
     - destination:
         host: carts-canary.sockshop-staging.svc.cluster.local
-      weight: 100
     - destination:
         host: carts-primary.sockshop-staging.svc.cluster.local
+      weight: 100
